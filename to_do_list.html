@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/
+    font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
+    
+</head>
+
+    <link rel="stylesheet" href="./to_do_list.css">
+
+</head>
+<body>
+        <div class="container">
+            <h1>To Do List</h1>
+            <div class="input-container">
+                <input class="todo-input" placeholder="Add Task...">
+                    <button class="add-button">
+                        <i class="fa fa-check-circle"></i>
+                    </button>
+            </div>
+            
+            <div class="filters">
+                <div class="filter" data-filter="completed">
+                    <i class="bi bi-check-circle-fill"></i> 
+                </div>
+                <div class="filter" data-filter="pending">
+                    <i class="bi bi-x-circle-fill"></i> 
+                </div>
+                
+                <div class="delete-all">    <i class="bi bi-trash"></i>    </div>
+              </div>
+
+            <div class="todos-container">
+                <ul class="todos"></ul>
+            </div>
+            </div>
+
+
+        <div class="clock">
+            <div class="time">time</div>
+            <div class="date">date</div>
+            <p class="clock-text">Make your day productive</p>
+        </div>
+            
+        </div>
+
+        <script src="to_do_list.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,269 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: "Playwrite CU", cursive;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./assets/background.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #faf0e6;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+
+h1 {
+    color: #faf0e6;
+    text-align: center;
+    margin-bottom: 36px;
+    animation: moveText 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.todo-input{
+    flex: 1;
+    outline: none;
+    padding: 10px 10px 10px 20px;
+    background-color: transparent;
+    border: 2px solid #faf0e6;
+    border-radius: 50px;
+    color: #faf0e6;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.todo-input::placeholder{
+    color: #faf0e6;
+}
+.add-button{
+    border: none;
+    outline: none;
+    background: #faf0e6;
+    color: #00a877;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 50px;
+    height: 45px;
+}
+
+
+.todo {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #319177;
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 10px 12px;
+    border: 2px solid #29ab87;
+    transition: all 0.2s ease;
+  }
+  
+  .todo:first-child {
+    margin-top: 0;
+  }
+  
+  .todo:last-child {
+    margin-bottom: 0;
+  }
+  
+  .todo:hover {
+    background-color:#30ba8f;
+  }
+  
+  .todo label {
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #eee;
+  }
+  
+  .todo span {
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  span::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-left: -30px;
+    border-radius: 100px;
+    border: 2px solid #faf0e6;
+  }
+  
+  input[type='checkbox'] {
+    visibility: hidden;
+  }
+  
+  input:checked + span {
+    text-decoration: line-through
+  }
+  
+  .todo:hover input:checked + span::before, input:checked + span::before {
+    background:   #09bb21;
+    border-color: #faf0e6;
+  }
+  
+  .todo:hover span::before {
+    border-color: #eee;
+  }
+  
+  .todo .delete-btn  {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    font-size: 24px;
+  }
+  
+  .todos-container  {
+    height: 300px;
+    overflow: overlay;
+  }
+  
+  .todos-container::-webkit-scrollbar-track  {
+    background: rgb(247, 247, 247);
+    border-radius: 20px
+  }
+  
+  .todos-container::-webkit-scrollbar  {
+    width: 0;
+  }
+  
+  .todos-container:hover::-webkit-scrollbar  {
+    width: 7px;
+  }
+  
+  .todos-container::-webkit-scrollbar-thumb  {
+    background: #30ba8f;
+    border-radius: 20px;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  .filter {
+    color: #eee;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #faf0e6;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
+    line-height: 50px; 
+}
+.filter i {
+    font-size: 1.4rem; 
+
+}
+
+  
+  .filter.active, .filter:hover {
+    background-color: #30ba8f;
+  }
+  
+  .delete-all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        background-color: #faf0e6;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0;
+  }
+  
+  .delete-all:hover {
+    border-radius: 5px;
+    background-color: #00a877;
+  }
+
+  .clock {
+    width: 15vw; 
+    padding: 1rem; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem; 
+    position: absolute;
+    top: 3rem; 
+    right: 1rem; 
+    backdrop-filter: blur(5px); 
+    transition: transform 0.5s;
+}
+
+.clock:hover {
+    transform: scale(1.1);
+}
+
+.time, .date, .clock-text {
+    margin: 0;
+}
+
+.time {
+    font-size: 3vw; /* Adjusted font size */
+    font-weight: bold;
+    color: #ddd;
+    line-height: 1.2;
+}
+
+.date {
+    font-size: 1.2rem; /* Adjusted font size */
+    opacity: 0.8;
+    line-height: 1.5;
+}
+.clock-text {
+  font-weight: bold;
+  text-align: center;
+}
